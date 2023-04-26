@@ -14,5 +14,7 @@ public class PruebaManual {
         }
         
         sanLorenzo.mostrarInformacion();
+        
+        sanLorenzo.cargarEquipo();
     }
 }

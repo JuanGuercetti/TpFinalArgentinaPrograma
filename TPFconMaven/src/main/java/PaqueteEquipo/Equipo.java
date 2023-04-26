@@ -1,6 +1,7 @@
 package PaqueteEquipo;
 
 import java.util.Scanner;
+import java.sql.*;
 
 public class Equipo {
     
@@ -53,5 +54,23 @@ public class Equipo {
         System.out.println("El director técnico es: " + directorTecnico);
         System.out.println("Cantidad de puntos: " + puntos);
         System.out.println("Partidos jugados: " + partidosJugados);
+    }
+    
+    public void cargarEquipo() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBequipos","root","");
+            Statement stmt = con.createStatement();
+            
+            int result = stmt.executeUpdate("INSERT INTO equiposFutbol VALUES(1,"+nombre+","
+                                            + ""+titulares+","+suplentes+","+directorTecnico+
+                                            ","+puntos+","+partidosJugados+");");
+            System.out.println(result + " registros afectados.");
+            
+            con.close();
+        }
+        catch(Exception e) {
+            System.out.println(e);
+        }
     }
 }
