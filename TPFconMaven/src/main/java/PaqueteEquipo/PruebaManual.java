@@ -7,6 +7,8 @@ public class PruebaManual {
         
         sanLorenzo.setDt("Rubén Darío Insúa");
         
+        // Bucle de 3 vueltas para probar los 3 resultados posibles (Victoria, 
+        // derrota e empate).
         for (int i = 0; i < 3; i++) {
             sanLorenzo.addPartido();
         }
