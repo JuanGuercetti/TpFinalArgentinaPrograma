@@ -17,7 +17,6 @@ public class Equipo {
         nombre = nombreEquipo;
     };
     
-    
     //Métodos
     public void setDt(String dt) {
         directorTecnico = dt;
